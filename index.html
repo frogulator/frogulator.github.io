@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+  <div id="frog"></div>
+  <div id="popup">
+    <p class="bubbleText"></p>
+  </div>
+  <p class="bubbleTextTwo"></p>
+  <audio controls autoplay id="backgroundMusic" loop>
+    <source src="sounds/backgroundMusic.mp3">
+  </audio>
+  <audio controls id="audioOne">
+    <source src="sounds/operatorSound.mp3">
+  </audio>
+  <audio controls id="audioTwo">
+    <source src="sounds/AB.mp3">
+  </audio>
+  <audio controls id="frogVoice">
+    <source src="sounds/froggo.wav">
+  </audio>
+  <audio controls id="snack">
+    <source src="sounds/bite.mp3">
+  </audio>
+
+  <p id="demo"></p>
+    <div class="calculator">
+      <div class="containerOne">
+        <button id="a" class="numberButton"><img src="images/a.svg" width="30%"></button>
+        <div class="backgroundTwo">
+            <div class="screen">
+              <div class="flexContainerOne">
+                  <p id="numberOne">0</p>
+                  <p id="operator">+</p> 
+                  <p id="numberTwo">0</p> 
+              </div>
+              <p id="result">=</p>  
+        </div>
+      </div>
+        <button id="b" class="numberButton"><img src="images/b.svg" width="30%"></button>
+      </div>
+      <div class="containerTwo">
+        <div class="background">
+           <button id="plus" class="operatorButton">+</button>
+           <button id="minus" class="operatorButton" id="space">-</button>
+        </div>
+      <div class="placeholder"></div>
+        <div class="background">
+            <button id="asterik" class="operatorButton">*</button>
+            <button id="slash" class="operatorButton">/</button>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p class="title">kim's calculator</p>
+      <div id="player">play audio</div>
+    </footer>
+    <script>
+      (function() {
+         var script = document.createElement('script');
+    
+         script.type = 'text/javascript';
+         script.async = true;
+         script.src = 'http://sd.toneden.io/production/toneden.loader.js'
+    
+         var entry = document.getElementsByTagName('script')[0];
+         entry.parentNode.insertBefore(script, entry);
+      }());
+    
+      ToneDenReady = window.ToneDenReady || [];
+      ToneDenReady.push(function() {
+         // This is where all the action happens:
+         ToneDen.player.create({
+            dom: '#player',
+            urls: [
+               'https://soundcloud.com/hiii-549374944/green'
+            ]
+         });
+      });
+   </script>
+    <script src="script.js"></script>
+    </body>
+</html>
+
