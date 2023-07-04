@@ -31,13 +31,14 @@ const player = document.getElementById('player')
 // });
 
 
-let pageWidth = window.innerWidth;
-let pageHeight = window.innerHeight;
+const pageWidth = window.innerWidth;
+const pageHeight = window.innerHeight;
 const playerWidth = player.offsetWidth;
 const playerHeight = player.offsetHeight;
 const maxLeft = pageWidth - playerWidth;
 const maxTop = pageHeight - playerHeight;
 const speed = 1;
+const bounceRange = 0.83; // Adjust the bounce range (0 to 1) here
 let directionX = 1;
 let directionY = 1;
 
@@ -51,7 +52,7 @@ function movePlayer() {
         directionX *= -1; // Reverse horizontal direction
     }
 
-    if (newTop <= 0 || newTop >= maxTop) {
+    if (newTop <= 0 || newTop >= (maxTop * bounceRange)) {
         directionY *= -1; // Reverse vertical direction
     }
 

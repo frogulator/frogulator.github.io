@@ -20,6 +20,11 @@ body {
     font-family: NixieOne;
 }
 
+.path {
+
+  background-color: #ff00002a;
+
+}
 
 audio {
   display: none;
@@ -178,12 +183,28 @@ gap: 0.15rem;
   border-radius: 0.4rem;
   background: linear-gradient(20deg, rgba(112, 159, 147, 0.603) 0%, rgba(79, 134, 98, 0.637) 90%);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 1px 3px -0.2px inset, 
-  rgba(0, 0, 0, 0.3) 0px 2px 4px -1px inset;
+  rgba(0, 0, 0, 0.217) 0px 2px 4px -1px inset;
   line-height: 1.2;
   margin-top: 9rem;
   font-size: 1.4rem;
   color: rgb(0, 0, 0);
+  /* border: #f9d6f69f;
+  border-top-width: 0.2rem;
+  border-left-width: 0.2rem;
+  border-right-width: 0.2rem;
+  border-style: solid;
+  border-bottom-width: 0.4rem; */
 }
+
+/* .backgroundTwo {
+  position: relative;
+  margin-top: 2rem;
+  padding: 0.5rem;
+  background-image: url(images/SVG/screen.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  
+} */
 
 .flexContainerOne {
   display: flex;
