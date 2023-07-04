@@ -18,6 +18,7 @@ const audioTwo = document.getElementById('audioTwo');
 const frogBoi = document.getElementById('frogVoice');
 const snack= document.getElementById('snack');
 const play = document.getElementById('play');
+const player = document.getElementById('player')
 
 // play.addEventListener('click', (event) => {
 //   if (backgroundMusic.paused) {
@@ -28,6 +29,39 @@ const play = document.getElementById('play');
 //     play.textContent = "play audio";
 //   }
 // });
+
+
+let pageWidth = window.innerWidth;
+let pageHeight = window.innerHeight;
+const playerWidth = player.offsetWidth;
+const playerHeight = player.offsetHeight;
+const maxLeft = pageWidth - playerWidth;
+const maxTop = pageHeight - playerHeight;
+const speed = 1;
+let directionX = 1;
+let directionY = 1;
+
+function movePlayer() {
+    const currentLeft = parseInt(player.style.left) || 0;
+    const currentTop = parseInt(player.style.top) || 0;
+    let newLeft = currentLeft + speed * directionX;
+    let newTop = currentTop + speed * directionY;
+
+    if (newLeft <= 0 || newLeft >= maxLeft) {
+        directionX *= -1; // Reverse horizontal direction
+    }
+
+    if (newTop <= 0 || newTop >= maxTop) {
+        directionY *= -1; // Reverse vertical direction
+    }
+
+    player.style.left = newLeft + 'px';
+    player.style.top = newTop + 'px';
+
+    requestAnimationFrame(movePlayer);
+}
+
+movePlayer();
 
 a.addEventListener('click', (event) => {
   var randomA = Math.floor(Math.random() * 101);

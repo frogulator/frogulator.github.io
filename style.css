@@ -269,16 +269,31 @@ p {
   gap: 1rem;
 }
 
-#player {
- 
-  background: none;
+/* #player {
+ padding: 5rem;
+  
   font-size: 1.4rem;
-  border: none;
-  padding-block: 1rem;
   width: 11rem;
   text-align: center;
   cursor: pointer;
-  height: 10rem;
-  width: 20rem;
+  height: 10%;
+  width: 20%rem;
+  background-image: url(images/SVG/soundcloud.svg);
+  border-style: none;
+  border-radius: 1rem;
+  background-repeat: no-repeat;
+
+} */
+
+#player {
+  position: absolute;
+ left: 1rem;
+top: 1rem;
+width: 10rem;
+height: 7rem;
+border-radius: 1rem;
+border-style: solid;
+border-color: #cefdb9;
+border-width: 5px;
 
 }
