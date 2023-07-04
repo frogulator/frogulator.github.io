@@ -14,20 +14,20 @@ const divide = document.getElementById('slash');
 const operator = document.getElementById('operator');
 const audioOne = document.getElementById('audioOne');
 const audioTwo = document.getElementById('audioTwo');
-const backgroundMusic = document.getElementById('backgroundMusic');
+// const backgroundMusic = document.getElementById('backgroundMusic');
 const frogBoi = document.getElementById('frogVoice');
 const snack= document.getElementById('snack');
 const play = document.getElementById('play');
 
-play.addEventListener('click', (event) => {
-  if (backgroundMusic.paused) {
-    backgroundMusic.play();
-    play.textContent = "pause audio";
-  } else {
-    backgroundMusic.pause();
-    play.textContent = "play audio";
-  }
-});
+// play.addEventListener('click', (event) => {
+//   if (backgroundMusic.paused) {
+//     backgroundMusic.play();
+//     play.textContent = "pause audio";
+//   } else {
+//     backgroundMusic.pause();
+//     play.textContent = "play audio";
+//   }
+// });
 
 a.addEventListener('click', (event) => {
   var randomA = Math.floor(Math.random() * 101);

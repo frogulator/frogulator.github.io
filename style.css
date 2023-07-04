@@ -270,13 +270,15 @@ p {
 }
 
 #player {
+ 
   background: none;
   font-size: 1.4rem;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #000000;
+  border: none;
   padding-block: 1rem;
   width: 11rem;
   text-align: center;
   cursor: pointer;
+  height: 10rem;
+  width: 20rem;
+
 }

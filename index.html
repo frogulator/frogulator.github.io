@@ -13,9 +13,9 @@
     <p class="bubbleText"></p>
   </div>
   <p class="bubbleTextTwo"></p>
-  <audio controls autoplay id="backgroundMusic" loop>
+  <!-- <audio controls autoplay id="backgroundMusic" loop>
     <source src="sounds/backgroundMusic.mp3">
-  </audio>
+  </audio> -->
   <audio controls id="audioOne">
     <source src="sounds/operatorSound.mp3">
   </audio>
@@ -59,31 +59,9 @@
     </div>
     <footer class="footer">
       <p class="title">kim's calculator</p>
-      <div id="player">play audio</div>
+      <!-- <div id="player">play audio</div> -->
+      <iframe id="player" scrolling="no"  allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1555940785&color=%23ccfcbc&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
     </footer>
-    <script>
-      (function() {
-         var script = document.createElement('script');
-    
-         script.type = 'text/javascript';
-         script.async = true;
-         script.src = 'http://sd.toneden.io/production/toneden.loader.js'
-    
-         var entry = document.getElementsByTagName('script')[0];
-         entry.parentNode.insertBefore(script, entry);
-      }());
-    
-      ToneDenReady = window.ToneDenReady || [];
-      ToneDenReady.push(function() {
-         // This is where all the action happens:
-         ToneDen.player.create({
-            dom: '#player',
-            urls: [
-               'https://soundcloud.com/hiii-549374944/green'
-            ]
-         });
-      });
-   </script>
     <script src="script.js"></script>
     </body>
 </html>
