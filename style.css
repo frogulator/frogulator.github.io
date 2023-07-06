@@ -20,15 +20,78 @@ body {
     font-family: NixieOne;
 }
 
-.path {
-
-  background-color: #ff00002a;
-
-}
 
 audio {
   display: none;
 }
+.volume {
+margin: 1rem;
+}
+
+.test {
+  background-color: #04b10100;
+  border-radius: 10rem;
+  position: absolute;
+  z-index: 100;
+}
+
+#test1 {
+  width: 12.1rem;
+  height: 12rem;
+  top: 0;
+  left: 69px;
+}
+
+#test2 {
+  width: 12.3rem;
+  height: 12rem;
+  top: 17px;
+  right: 41px;
+}
+
+#test3 {
+  width: 13.6rem;
+  height: 13.2rem;
+  bottom: 1px;
+  right: 0px;
+}
+
+#test4 {
+  width: 13.6rem;
+  height: 13.34rem;
+  bottom: 23px;
+  left: 0px;
+}
+
+
+
+/* Styling the track with box shadow */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 30%;
+  height: 0.1rem;
+  border-radius: 50rem;
+  border-radius: 50px;
+  background: #00000089;
+
+}
+
+/* Styling the thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.45rem;
+  border: #00000089;
+  border-width: 0.1rem;
+  border-style: solid;
+  background-color: #fdf5e7;
+  margin-bottom: 0.2rem;
+  cursor: pointer;  transition: transform 0.3s ease-in-out;
+}
+
+
+
 
 #popup {
 display: none;
@@ -103,6 +166,30 @@ background-size: cover;
   font-style: italic;
   margin: 1rem;
 }
+
+#obstacle {
+  
+  width: 500px;
+  height: 400px;
+border-radius: 12rem 40% 5rem 30%;
+background-color: #36ce3300;
+
+}
+
+path {
+  fill: #00000000;
+}
+
+.svgContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+
 
 .calculator {
     z-index: 0;
@@ -188,23 +275,7 @@ gap: 0.15rem;
   margin-top: 9rem;
   font-size: 1.4rem;
   color: rgb(0, 0, 0);
-  /* border: #f9d6f69f;
-  border-top-width: 0.2rem;
-  border-left-width: 0.2rem;
-  border-right-width: 0.2rem;
-  border-style: solid;
-  border-bottom-width: 0.4rem; */
 }
-
-/* .backgroundTwo {
-  position: relative;
-  margin-top: 2rem;
-  padding: 0.5rem;
-  background-image: url(images/SVG/screen.svg);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  
-} */
 
 .flexContainerOne {
   display: flex;
@@ -307,8 +378,8 @@ p {
 } */
 
 #player {
-  position: absolute;
- left: 1rem;
+position: absolute;
+left: 1rem;
 top: 1rem;
 width: 10rem;
 height: 7rem;

@@ -18,7 +18,11 @@ const audioTwo = document.getElementById('audioTwo');
 const frogBoi = document.getElementById('frogVoice');
 const snack= document.getElementById('snack');
 const play = document.getElementById('play');
-const player = document.getElementById('player')
+
+
+
+
+
 
 // play.addEventListener('click', (event) => {
 //   if (backgroundMusic.paused) {
@@ -29,8 +33,8 @@ const player = document.getElementById('player')
 //     play.textContent = "play audio";
 //   }
 // });
-
-
+const player = document.getElementById('player');
+const obstacles = document.querySelectorAll('.test');
 const pageWidth = window.innerWidth;
 const pageHeight = window.innerHeight;
 const playerWidth = player.offsetWidth;
@@ -38,9 +42,42 @@ const playerHeight = player.offsetHeight;
 const maxLeft = pageWidth - playerWidth;
 const maxTop = pageHeight - playerHeight;
 const speed = 1;
-const bounceRange = 0.83; // Adjust the bounce range (0 to 1) here
+const bounceRange = 0.95;
 let directionX = 1;
 let directionY = 1;
+
+function checkCollision() {
+    const playerRect = player.getBoundingClientRect();
+
+    for (const obstacle of obstacles) {
+        const obstacleRect = obstacle.getBoundingClientRect();
+
+        if (
+            playerRect.left < obstacleRect.right &&
+            playerRect.right > obstacleRect.left &&
+            playerRect.top < obstacleRect.bottom &&
+            playerRect.bottom > obstacleRect.top
+        ) {
+            const playerCenterX = playerRect.left + playerRect.width / 2;
+            const playerCenterY = playerRect.top + playerRect.height / 2;
+            const obstacleCenterX = obstacleRect.left + obstacleRect.width / 2;
+            const obstacleCenterY = obstacleRect.top + obstacleRect.height / 2;
+
+            const angle = Math.atan2(playerCenterY - obstacleCenterY, playerCenterX - obstacleCenterX);
+            const angleDeg = angle * 180 / Math.PI;
+
+            if (angleDeg > -45 && angleDeg <= 45) {
+                directionX *= -1;
+            } else if (angleDeg > 45 && angleDeg <= 135) {
+                directionY *= -1;
+            } else if (angleDeg > 135 || angleDeg <= -135) {
+                directionX *= -1;
+            } else {
+                directionY *= -1;
+            }
+        }
+    }
+}
 
 function movePlayer() {
     const currentLeft = parseInt(player.style.left) || 0;
@@ -52,17 +89,61 @@ function movePlayer() {
         directionX *= -1; // Reverse horizontal direction
     }
 
-    if (newTop <= 0 || newTop >= (maxTop * bounceRange)) {
+    if (newTop <= 0 || newTop >= (maxTop - (playerHeight * bounceRange))) {
         directionY *= -1; // Reverse vertical direction
     }
 
     player.style.left = newLeft + 'px';
     player.style.top = newTop + 'px';
 
+    checkCollision();
+
     requestAnimationFrame(movePlayer);
 }
 
 movePlayer();
+
+
+// const player = document.getElementById('player');
+// const pageWidth = window.innerWidth;
+// const pageHeight = window.innerHeight;
+// const playerWidth = player.offsetWidth;
+// const playerHeight = player.offsetHeight;
+// const maxLeft = pageWidth - playerWidth;
+// const maxTop = pageHeight - playerHeight;
+// const speed = 1;
+// const bounceRange = 0.95; // Adjust the bounce range (0 to 1) here
+// let directionX = 1;
+// let directionY = 1;
+
+// function movePlayer() {
+//     const currentLeft = parseInt(player.style.left) || 0;
+//     const currentTop = parseInt(player.style.top) || 0;
+//     let newLeft = currentLeft + speed * directionX;
+//     let newTop = currentTop + speed * directionY;
+
+//     if (newLeft <= 0 || newLeft >= maxLeft) {
+//         directionX *= -1; // Reverse horizontal direction
+//     }
+
+//     if (newTop <= 0 || newTop >= (maxTop - (playerHeight * bounceRange))) {
+//         directionY *= -1; // Reverse vertical direction
+//     }
+
+//     player.style.left = newLeft + 'px';
+//     player.style.top = newTop + 'px';
+
+//     requestAnimationFrame(movePlayer);
+// }
+
+// movePlayer();
+
+let audio_iframe = document.querySelector('iframe');
+
+widget = SC.Widget(audio_iframe);
+widget.setVolume(0.1);
+
+
 
 a.addEventListener('click', (event) => {
   var randomA = Math.floor(Math.random() * 101);
@@ -146,15 +227,13 @@ divide.addEventListener('click', (event) => {
       document.body.classList.add('hidecursor');
       frog.style.backgroundImage = 'url(frog/frog1.svg)';
       popup.style.display = 'block';
-      bubbleText.style.display = 'block';
-      
-      
     }, 1500);
   }, 1000);
-
+  
+  let typewriterText = document.querySelector(".bubbleText");
   setTimeout(() => {let text = "Oy! You! Little dimwit! Think you're clever, dividing by zero, huh? Are you TRYING to have me fired?? Me, the mighty guardian of math? Listen up fella, you're lucky I was able to gobble up your little cursor in time.  Now  I will give it back to you, but no more funny business! *grumble*";
   const speed = 50;
-  let typewriterText = document.querySelector(".bubbleText");
+  
   let index = 0;
   
   function type() {
@@ -171,12 +250,12 @@ divide.addEventListener('click', (event) => {
   setTimeout(() => {
     document.body.classList.remove('hidecursor');
     popup.style.display = 'none';
-    bubbleText.style.display = 'none';
-  }, 22000);
+  }, 20000);
   setTimeout(() => {
     frog.style.transition = 'transform 0.7s ease-in-out';
     frog.style.transform = '';
-  }, 22000);
+    typewriterText.textContent = '';
+  }, 20000);
   return;}
   
   divideResult(parseInt(numberOne.textContent), randomB);
