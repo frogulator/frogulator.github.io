@@ -6,17 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://w.soundcloud.com/player/api.js"></script>
 </head>
 <body>
+ <div class="volume">
+    <p>volume</p>
+    <div class="ranger">
+      <input type="range" min="0" max="100" value="30" class="slider" id="volumeSlider">
+    </div> 
+</div>
+<div class="volume">
+  <p>speed</p>
+  <div class="ranger">
+    <input type="range" min="0" max="20" value="1" class="slider" id="speedSlider">
+  </div> 
+</div>
+<div class="calculator">
+  <div class="containerOne">
+    <button id="a" class="numberButton"><img src="images/a.svg" width="30%"></button>
+    <div class="backgroundTwo">
+        <div class="screen">
+          <div class="flexContainerOne">
+              <p id="numberOne">0</p>
+              <p id="operator">+</p> 
+              <p id="numberTwo">0</p> 
+          </div>
+          <p id="result">=</p>  
+    </div>
+  </div>
+    <button id="b" class="numberButton"><img src="images/b.svg" width="30%"></button>
+  </div>
+  <div class="containerTwo">
+    <div class="background">
+       <button id="plus" class="operatorButton">+</button>
+       <button id="minus" class="operatorButton" id="space">-</button>
+    </div>
+  <div class="placeholder"></div>
+    <div class="background">
+        <button id="asterik" class="operatorButton">*</button>
+        <button id="slash" class="operatorButton">/</button>
+    </div>
+  </div>
+</div>
+<!-- 
+  <div id="bigAssContainer"> -->
   
+   
+      <div class="test" id="test1"></div>
+      <div class="test" id="test2"></div>
+    
+    
+      <div class="test" id="test3"></div>
+      <div class="test" id="test4"></div>
+    
+    
+  <!-- </div> -->
+    <footer class="footer">
+      <p class="title">kim's calculator</p>
+      <!-- <div id="player">play audio</div> -->
+    </footer>
+    <!-- this stuff isn't visible -->
+
   <div id="frog"></div>
   <div id="popup">
     <p class="bubbleText"></p>
   </div>
   <p class="bubbleTextTwo"></p>
-  <!-- <audio controls autoplay id="backgroundMusic" loop>
-    <source src="sounds/backgroundMusic.mp3">
-  </audio> -->
   <audio controls id="audioOne">
     <source src="sounds/operatorSound.mp3">
   </audio>
@@ -29,41 +84,17 @@
   <audio controls id="snack">
     <source src="sounds/bite.mp3">
   </audio>
-  <div class="bgSound"></div>
-  <iframe id="player" scrolling="no"  allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1555940785&color=cefdb9&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=false"></iframe>
-  <p id="demo"></p>
-    <div class="calculator">
-      <div class="containerOne">
-        <button id="a" class="numberButton"><img src="images/a.svg" width="30%"></button>
-        <div class="backgroundTwo">
-            <div class="screen">
-              <div class="flexContainerOne">
-                  <p id="numberOne">0</p>
-                  <p id="operator">+</p> 
-                  <p id="numberTwo">0</p> 
-              </div>
-              <p id="result">=</p>  
-        </div>
-      </div>
-        <button id="b" class="numberButton"><img src="images/b.svg" width="30%"></button>
-      </div>
-      <div class="containerTwo">
-        <div class="background">
-           <button id="plus" class="operatorButton">+</button>
-           <button id="minus" class="operatorButton" id="space">-</button>
-        </div>
-      <div class="placeholder"></div>
-        <div class="background">
-            <button id="asterik" class="operatorButton">*</button>
-            <button id="slash" class="operatorButton">/</button>
-        </div>
-      </div>
-    </div>
-    <footer class="footer">
-      <p class="title">kim's calculator</p>
-      <!-- <div id="player">play audio</div> -->
-    </footer>
+
+  <iframe id="player" 
+          scrolling="no" 
+          frameborder="no" 
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/hiii-549374944/green&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=false">
+  </iframe>
+
+<!-- ignore me :-) -->
     <script src="script.js"></script>
     </body>
 </html>
+
+
 

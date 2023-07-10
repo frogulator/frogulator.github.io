@@ -20,15 +20,71 @@ body {
     font-family: NixieOne;
 }
 
-.path {
-
-  background-color: #ff00002a;
-
-}
 
 audio {
   display: none;
 }
+
+.volume {
+margin: 1rem;
+}
+
+
+/* Styling the track with box shadow */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 30%;
+  height: 0.1rem;
+  border-radius: 50rem;
+  border-radius: 50px;
+  background: #00000089;
+
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.45rem;
+  border: 0.1rem solid #00000089;
+  background-color: #fdf5e7;
+  margin-bottom: 0.2rem;
+  cursor: pointer;  
+  transition: transform 0.3s ease-in-out;
+}
+
+
+input[type="range"]::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.45rem;
+  border: 0.1rem solid #00000089;
+  background-color: #fdf5e7;
+  cursor: pointer;  
+  transition: transform 0.3s ease-in-out;
+}
+
+input[type="range"]::-ms-thumb {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.45rem;
+  border: 0.1rem solid #00000089;
+  background-color: #fdf5e7;
+  cursor: pointer;  
+  transition: transform 0.3s ease-in-out;
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+
+
+
 
 #popup {
 display: none;
@@ -40,7 +96,7 @@ transform: translate(-55%, -80%);
 background-image: url(frog/SVG/speechbubble_1.svg);
 background-repeat: no-repeat;
 background-position: center;
-background-size: cover;
+background-size: contain;
 }
 
 
@@ -49,14 +105,14 @@ background-size: cover;
   display: block;
   z-index: 11;
   position: relative;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.1;
   text-align: center;
   font-family: Pixel;
   color: #05b101;
   width: 20rem;
   height: 15rem;
-  padding: 2rem;
+  padding: 3rem;
 } 
 
 #frog {
@@ -65,13 +121,26 @@ background-size: cover;
   height: 5rem;
   background-repeat: no-repeat;
   position: absolute;
-  bottom: 0;
-  right: 3vh;
+  bottom: 1vh;
+  right: 2vh;
+  background-size: contain;
   z-index: 100;
 }
 
 .hidecursor {
   cursor: none;
+
+/* .testContainer{
+    z-index: 0;
+    width: calc(1048px/2);
+    height: calc(801px/2);
+    margin-top: 50%;
+    margin-left: 50%;
+    background-color: #40f8033d;
+   
+} */
+
+
 }
 
 	
@@ -104,8 +173,16 @@ background-size: cover;
   margin: 1rem;
 }
 
+
+
+
+
+
+
+
+
 .calculator {
-    z-index: 0;
+  z-index: 1;
     position: absolute;
     width: calc(1048px/2);
     height: calc(801px/2);
@@ -188,23 +265,7 @@ gap: 0.15rem;
   margin-top: 9rem;
   font-size: 1.4rem;
   color: rgb(0, 0, 0);
-  /* border: #f9d6f69f;
-  border-top-width: 0.2rem;
-  border-left-width: 0.2rem;
-  border-right-width: 0.2rem;
-  border-style: solid;
-  border-bottom-width: 0.4rem; */
 }
-
-/* .backgroundTwo {
-  position: relative;
-  margin-top: 2rem;
-  padding: 0.5rem;
-  background-image: url(images/SVG/screen.svg);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  
-} */
 
 .flexContainerOne {
   display: flex;
@@ -272,15 +333,70 @@ p {
   transform: scale(0.96);
 }
 
+.test {
+  z-index: 0;
+  background-color: #3f05ff00;
+  border-radius: 200px;
+}
+
+#test1 {
+  position: absolute;
+  width: 12rem;
+  height: 12rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100%, -90%);
+  
+ 
+}
+
+#test2 {
+  position: absolute;
+  width: 12rem;
+  height: 12rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(13.5%, -85%);
+
+
+}
+
+#test3 {
+  position: absolute;
+  width: 13.5rem;
+  height: 13.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(20.3%, -6.8%);
+
+}
+
+#test4 {
+  position: absolute;
+  width: 13.2rem;
+  height: 13.2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-123%, -16%);
+}
+
+
+
+
+
+
+
+
+
 .title {
-  font-size: 7vh;
-  padding: 3vh;
+  font-size: 3rem;
+  padding-left: 2rem;
 }
 
 .footer {
   position: sticky;
   top: 87vh;
-  height: auto;
+  height: 13vh;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -307,8 +423,9 @@ p {
 } */
 
 #player {
-  position: absolute;
- left: 1rem;
+z-index: 2;
+position: absolute;
+left: 1rem;
 top: 1rem;
 width: 10rem;
 height: 7rem;
