@@ -193,69 +193,16 @@ volumeSlider.addEventListener('input', function() {
 });
 
 
-// let interactions = [
-//   function interaction1() {
-
-//     let text = "Helloo! Doing some calculations? I am Vector, the guardian of math. I noticed you just tried to divide by zero! Curious, isn’t it? The notion of dividing something into zero parts... Might tear the fabric of mathematics apart at the seams! Don’t worry though, I was able to gobble up your cursor in time. I’ll give it back to you now. Enjoy the fascinating world of numbers!";
-//     const speed = 50;
-//     let typewriterText = document.querySelector(".bubbleText");
-//     let index = 0;
-//     typewriterText.textContent = '';  // Clear the current content
-//     function type() {
-//       if (index < text.length) {
-//         typewriterText.textContent += text.charAt(index);
-//         index++;
-//         setTimeout(type, speed);
-//       }
-//     }
-//     type();
-//   },
-//   function interaction2() {
-//     // Typewriter animation for the second interaction
-//     let text = "*yaaawn…………* Oh sorry! It’s you, my friend! Tried to divide by zero again? Hehehe, little rascal! But please don’t do that, don’t you remember our talk about the fabric of mathema.. *oh!* I am being called away! It seems someone jumbled an equation. I need to go!! God this job is stressful….";
-//     const speed = 50;
-//     let typewriterText = document.querySelector(".bubbleText");
-//     let index = 0;
-//     typewriterText.textContent = '';  // Clear the current content
-//     function type() {
-//       if (index < text.length) {
-//         typewriterText.textContent += text.charAt(index);
-//         index++;
-//         setTimeout(type, speed);
-//       }
-//     }
-//     type();
-//   },
-//   function interaction3() {
-//     // Typewriter animation for the third interaction
-//     let text = "AHHHHHHHHHHHHHHH I can't do this anymore! I quit!!";
-//     const speed = 50;
-//     let typewriterText = document.querySelector(".bubbleText");
-//     let index = 0;
-//     typewriterText.textContent = '';  // Clear the current content
-//     function type() {
-//       if (index < text.length) {
-//         typewriterText.textContent += text.charAt(index);
-//         index++;
-//         setTimeout(type, speed);
-//       }
-//     }
-//     type();
-//   }
-// ];
-// // Define the interactions
-
-
 
 
 let interactions = [
   {
-    text: "Helloo! Doing some calculations? I am Vector, the guardian of math. I noticed you just tried to divide by zero! Curious, isn’t it? The notion of dividing something into zero parts... Might tear the fabric of mathematics apart at the seams! Don’t worry though, I was able to gobble up your cursor in time. I’ll give it back to you now. Enjoy the fascinating world of numbers!",
+    text: "Helloo! Doing some calculations? I am Vector, the guardian of math. I noticed you just tried to divide by zero! Curious, isn’t it? The notion of dividing something into zero parts... Might tear the fabric of mathematics apart at the seams! Don’t worry though, I was able to gobble up your cursor in time. I’ll give it back to you now. Enjoy!",
     run: function() {
       const speed = 50;
       let typewriterText = document.querySelector(".bubbleText");
       let index = 0;
-      typewriterText.textContent = '';  // Clear the current content
+      typewriterText.textContent = '';  
       function type() {
         if (index < this.text.length) {
           typewriterText.textContent += this.text.charAt(index);
@@ -289,7 +236,7 @@ let interactions = [
       const speed = 100;
       let typewriterText = document.querySelector(".bubbleText");
       let index = 0;
-      typewriterText.textContent = '';  // Clear the current content
+      typewriterText.textContent = '';  
       function type() {
         if (index < this.text.length) {
           typewriterText.textContent += this.text.charAt(index);
@@ -301,16 +248,16 @@ let interactions = [
     }
   }
 ].map(interaction => {
-  // Add a duration property to each interaction based on the length of the text
-  interaction.duration = interaction.text.length * 50 + 1000;  // speed * length + some extra time
+
+  interaction.duration = interaction.text.length * 50 + 1000;  
   return interaction;
 });
 
 
-// Initialize the counter
+
 let counter = 0;
 
-// Set up your event listener
+
 divide.addEventListener('click', (event) => {
   let randomB = parseInt(numberTwo.textContent);
   if (randomB === 0) {
@@ -335,10 +282,10 @@ divide.addEventListener('click', (event) => {
           frog.style.backgroundImage = 'url(frog/frog1.svg)';
           popup.style.display = 'block';
           
-          // Invoke the interaction function here
+
           interactions[counter].run();
           
-          // Increment the counter
+
           counter = (counter + 1) % interactions.length;
           
       }, 1500);
